@@ -1,5 +1,7 @@
 <?php
 
+
+use Illuminate\Support\Facades\Gate;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +14,15 @@
 */
 
 Route::get('/', function () {
+    
+    // \Illuminate\Support\Facades\Auth::LoginUsingId(2); // logar com o usuario client da silva
+    
+    if( Gate::allows('access-admin') ){
+        return "usuario com permissão de admin";
+    }else{
+        return "usuario sem permissão de admin";
+    }
+    
     return view('welcome');
 });
 
