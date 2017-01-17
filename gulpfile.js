@@ -10,6 +10,8 @@ const webpackDevConfig = require('./webpack.dev.config');
 require('laravel-elixir-vue');
 require('laravel-elixir-webpack-official');
 
+console.log(Elixir.webpack);
+
 Elixir.webpack.config.module.loaders = [];
 
 Elixir.webpack.mergeConfig(webpackConfig);
@@ -42,13 +44,13 @@ elixir(mix => {
        .copy('./node_modules/materialize-css/fonts/roboto', './public/fonts/roboto');
       // .webpack('./resources/assets/admin/js/app.js');
     
-    gulp.start('webpack-dev-server');   
+    // gulp.start('webpack-dev-server');   
        
-    mix.browserSync({
-        host: '0.0.0.0',
-        proxy: 'http://laravel-vuejs-fcm.c9users.io',
-        port: 8082
+     mix.browserSync({
+         host: '0.0.0.0',
+         proxy: 'http://laravel-vuejs-fcm.c9users.io',
+         port: 8082
     });
-       
-       //.webpack('app.js');
+    
+
 });
