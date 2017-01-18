@@ -6,21 +6,34 @@ const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const webpackConfig = require('./webpack.config');
 const webpackDevConfig = require('./webpack.dev.config');
+const mergeWebpack =  require("webpack-merge");
 
-require('laravel-elixir-vue');
-require('laravel-elixir-webpack-official');
+//require('laravel-elixir-vue');
+//require('laravel-elixir-webpack-official');
 
 //console.log(Elixir.webpack);
 
-Elixir.webpack.config.module.loaders = [];
+/*Elixir.webpack.config.module.loaders = [];
 
 Elixir.webpack.mergeConfig(webpackConfig);
-Elixir.webpack.mergeConfig(webpackDevConfig);
+Elixir.webpack.mergeConfig(webpackDevConfig);*/
 
 gulp.task('webpack-dev-server', () => {
     "use strict";
-    let config = Elixir.webpack.config;
+    //let config = Elixir.webpack.config;
+    let config = mergeWebpack(webpackConfig, webpackDevConfig);
+    
+    let inlineHot = [
+        'webpack/hot/dev-server',
+        'webpack-dev-server/client?http://0.0.0.0:8082'
+    ];
+    
+    config.entry.admin = [config.entry.admin].concat(inlineHot);
+    
+    
+    
     new WebpackDevServer(webpack(config), {
+        hot: true,
         proxy: {
           '*': 'http://0.0.0.0:8080'
         },
