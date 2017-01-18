@@ -10,7 +10,7 @@ const webpackDevConfig = require('./webpack.dev.config');
 require('laravel-elixir-vue');
 require('laravel-elixir-webpack-official');
 
-console.log(Elixir.webpack);
+//console.log(Elixir.webpack);
 
 Elixir.webpack.config.module.loaders = [];
 
@@ -22,17 +22,17 @@ gulp.task('webpack-dev-server', () => {
     let config = Elixir.webpack.config;
     new WebpackDevServer(webpack(config), {
         proxy: {
-          '*': 'http://192.168.10.10:8000'
+          '*': 'http://0.0.0.0:8080'
         },
         watchOptions:{
             poll: true,
             aggregateTimeout: 300
         },
         publicPath: config.output.publicPath,
-        noInfo: true,
+        //noInfo: true,
         stats: { colors: true }
-    }).listen(8000, "0.0.0.0", () => {
-            console.log("Bundling project...");
+    }).listen(8081, "0.0.0.0", () => {
+            console.log("Bundling project in 0.0.0.0:8081 ...");
     });
 });
 
@@ -44,11 +44,12 @@ elixir(mix => {
        .copy('./node_modules/materialize-css/fonts/roboto', './public/fonts/roboto');
       // .webpack('./resources/assets/admin/js/app.js');
     
-    // gulp.start('webpack-dev-server');   
+     gulp.start('webpack-dev-server');   
        
      mix.browserSync({
          host: '0.0.0.0',
-         proxy: 'http://laravel-vuejs-fcm.c9users.io',
+         //proxy: 'http://laravel-vuejs-fcm.c9users.io:8080',
+         proxy: '0.0.0.0:8081',
          port: 8082
     });
     
