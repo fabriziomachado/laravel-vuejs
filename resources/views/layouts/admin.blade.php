@@ -8,10 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel + Vuejs') }}</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -22,6 +22,7 @@
 </head>
 <body>
     <div id="app">
+        <example></example>
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -36,7 +37,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'Laravel + Vuejs') }}
                     </a>
                 </div>
 
@@ -60,13 +61,13 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="{{ url(env('URL_ADMIN_LOGOUT','/logou')) }}"
+                                        <a href="{{ url(env('URL_ADMIN_LOGOUT','/logout')) }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
 
-                                        <form id="logout-form" action="{{ url(env('URL_ADMIN_LOGOUT','/logou')) }}" method="POST" style="display: none;">
+                                        <form id="logout-form" action="{{ url(env('URL_ADMIN_LOGOUT','/logout')) }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
@@ -82,6 +83,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
+    <!-- <script src="/js/app.js"></script> -->
+    <script src="{{ asset('/build/admin.bundle.js') }}"></script>
 </body>
 </html>

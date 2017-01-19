@@ -1,5 +1,42 @@
 # Laravel PHP Framework
 
+
+# Configurando inline e hot do webpack-dev-server
+
+http://192.168.10.10:8000
+
+- $ gulp watch
+
+- Rodar o servidor php
+- Acessar bno browser: http://laravel-vuejs-fcm.c9users.io:8082/
+
+
+# Esquema do BrowserSync -> Webpack-server -> php
+
+\0/  ->  http://laravel-vuejs-fcm.c9users.io:8082
+     ->  0.0.0.0:8081
+     ->  0.0.0.0:8080 (php interno do c9)
+
+
+
+
+   62  npm unistall webpack
+   63  npm uninstall webpack
+   65  npm update
+   73  npm install babel-plugin-add-module-exports --save-dev
+   
+   75  npm install babel-plugin-transform-runtime --save-dev
+   
+   $ npm install vue-loader@^8.5.3 vue-hot-reload-api@^1.3.3 vue-html-loader vue-style-loader --save-dev                           
+npm WARN peerDependencies The peer dependency babel-
+
+
+
+
+
+
+
+
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
 [![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
