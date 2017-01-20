@@ -22,12 +22,53 @@
 </head>
 <body>
     <div id="app">
-        <example></example>
-        <nav class="navbar navbar-default navbar-static-top">
+    <header>        
+        
+        <!-- Authentication menu -->
+        @if (Auth::check())
+            <?php $menuConfig = [
+                'name'  => Auth::user()->name,
+                'menus' => [
+                        // [
+                        //     'name'   => 'Banco',
+                        //     'url'    => route('admin.banks.index'),
+                        //     'active' => isRouteActive('admin.banks.edit')
+                        // ],
+                        ['name' => 'Contas a pagar', 'url' => '/teste', 'dropdownId' => 'teste'],
+                        ['name' => 'Contas a receber', 'url' => '/teste1', 'dropdownId' => 'teste'],
+                    ],
+                'menusDropdown' => [
+                        [
+                                'id' => 'teste',
+                                'items' => [
+                                         [
+                                                 'name' => 'Listar conta',
+                                                 'url' => '/listar', //route('admin.banks.index'),
+                                                 //'active' => isRouteActive('admin.banks.edit')
+                                         ],
+                                         [
+                                                 'name' => 'Criar conta',
+                                                 'url' => '/criar', //route('admin.banks.index'),
+                                                 //'active' => isRouteActive('admin.banks.edit')
+                                         ],
+                                ],
+                        ]
+                ],
+                'urlLogout' => env('URL_ADMIN_LOGOUT'),
+                    'csrfToken' => csrf_token()
+            ];
+            ?>
+            
+            <admin-menu :config="{{ json_encode($menuConfig) }}"></admin-menu>
+            
+        @endif
+
+
+        <nav class="navbar navbar-default navbar-static-top teal">
             <div class="container">
                 <div class="navbar-header">
 
-                    <!-- Collapsed Hamburger -->
+                     <!--Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
                         <span class="icon-bar"></span>
@@ -35,21 +76,21 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <!-- Branding Image -->
+                     <!--Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel + Vuejs') }}
+                        {{ config('app.name', 'Code Contas') }}
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
+                     <!--Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
+                     <!--Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
+                         <!--Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url(env('URL_ADMIN_LOGIN','/login')) }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
@@ -78,8 +119,24 @@
                 </div>
             </div>
         </nav>
+        
+        </header>
 
-        @yield('content')
+         <main>
+            @yield('content')
+        </main>
+        
+        
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container">
+                    @ {{ date('Y') }} <a class="grey-text text-lighten-4" href="http://code.education">Code Education</a>
+                </div>
+            </div>
+        
+        </footer>
+
+        
     </div>
 
     <!-- Scripts -->
