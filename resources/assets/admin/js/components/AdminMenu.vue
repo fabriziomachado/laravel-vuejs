@@ -17,7 +17,7 @@
     
     <!-- Menu list --> 
     <div class="navbar-fixed">
-        <nav class="teal">
+        <nav>
             <div class="nav-wrapper container">
                 <div class="col s12">
                     <a href="#" class="left brand-logo hide-on-med-and-down">Code Contas [admin]</a>
