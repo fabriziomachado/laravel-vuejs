@@ -20,7 +20,7 @@
         <nav class="teal">
             <div class="nav-wrapper container">
                 <div class="col s12">
-                    <a href="#" class="left brand-logo hide-on-med-and-down">Code Contas - admin</a>
+                    <a href="#" class="left brand-logo hide-on-med-and-down">Code Contas [admin]</a>
                     <a href="#" data-activates="nav-mobile" class="button-collapse">
                         <i class="material-icons">menu</i>
                     </a>
