@@ -14,7 +14,7 @@
                                    class="validate {{ $messageError? 'invalid' : $messageError }}" name="email"
                                    value="{{ old('email') }}"
                                    required autofocus>
-                            <label for="email" {!! $messageError !!}>E-Mail:</label>
+                            <label for="email" {!! $messageError !!}>e-mail</label>
                         </div>
                     </div>
                     <div class="row">
@@ -24,7 +24,7 @@
                                    class="validate {{ $messageError? 'invalid' : $messageError }}" name="password"
                                    value="{{ old('password') }}"
                                    required>
-                            <label for="password" {!! $messageError !!}>Senha:</label>
+                            <label for="password" {!! $messageError !!}>password</label>
                         </div>
                     </div>
 
@@ -37,8 +37,8 @@
 
                     <div class="row">
                         <div class="input-field col s12">
-                            <button type="submit" class="btn"> Login</button>
-                            <a class="btn btn-link" href="{{ url('/password/reset') }}">
+                            <button type="submit" class="waves-effect waves-light btn-large"> Login</button>
+                            <a class="waves-effect waves-light btn btn-link" href="{{ url('/password/reset') }}">
                                 Esqueceu sua senha?
                             </a>
                         </div>
