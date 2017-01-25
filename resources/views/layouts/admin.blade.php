@@ -122,7 +122,7 @@
         
         </header>
 
-         <main>
+        <main>
             @yield('content')
         </main>
         
@@ -133,7 +133,6 @@
                     @ {{ date('Y') }} <a class="grey-text text-lighten-4" href="http://code.education">Code Education</a>
                 </div>
             </div>
-        
         </footer>
 
         
