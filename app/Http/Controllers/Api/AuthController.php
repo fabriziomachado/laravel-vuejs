@@ -1,10 +1,11 @@
 <?php
 
-namespace CodeFin\Http\Api\Auth;
+namespace CodeFin\Http\Controllers\Api;
 
 use CodeFin\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use CodeFin\User;
 
@@ -16,6 +17,7 @@ class AuthController extends Controller
 
     public function accessToken(Request $request){
         $this->validateLogin($request);
+        
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
         // the IP address of the client making these requests into this application.
@@ -36,9 +38,9 @@ class AuthController extends Controller
     protected function sendLoginResponse(Request $request, $token)
     {
 // 		$this->clearLoginAttempts($request);
-//         return response()->json([
-//           'token' => $token
-//         ]);
+        return response()->json([
+          'token' => $token
+        ]);
     }
 
 

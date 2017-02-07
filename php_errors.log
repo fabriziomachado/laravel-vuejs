@@ -1,0 +1,4 @@
+[07-Feb-2017 12:41:51 UTC] PHP Fatal error:  Cannot declare class CodeFin\Http\Api\Auth\AuthController, because the name is already in use in /home/ubuntu/workspace/code-financeiro/app/Http/Controllers/Api/AuthController.php on line 11
+[07-Feb-2017 12:47:14 UTC] PHP Fatal error:  Cannot declare class CodeFin\Http\Api\Auth\AuthController, because the name is already in use in /home/ubuntu/workspace/code-financeiro/app/Http/Controllers/Api/AuthController.php on line 11
+[07-Feb-2017 12:48:38 UTC] PHP Fatal error:  Cannot declare class CodeFin\Http\Api\Auth\AuthController, because the name is already in use in /home/ubuntu/workspace/code-financeiro/app/Http/Controllers/Api/AuthController.php on line 11
+[07-Feb-2017 12:51:16 UTC] PHP Fatal error:  Cannot declare class CodeFin\Http\Api\Auth\AuthController, because the name is already in use in /home/ubuntu/workspace/code-financeiro/app/Http/Controllers/Api/AuthController.php on line 11

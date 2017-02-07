@@ -20,3 +20,6 @@ Route::get('/user', function (Request $request) {
 Route::get('/hello', function (Request $request) {
     return "hello worl by pi";
 });
+
+
+Route::post('access_token', 'Api\AuthController@accessToken');
