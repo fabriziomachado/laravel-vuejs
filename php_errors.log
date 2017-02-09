@@ -2,3 +2,10 @@
 [07-Feb-2017 12:47:14 UTC] PHP Fatal error:  Cannot declare class CodeFin\Http\Api\Auth\AuthController, because the name is already in use in /home/ubuntu/workspace/code-financeiro/app/Http/Controllers/Api/AuthController.php on line 11
 [07-Feb-2017 12:48:38 UTC] PHP Fatal error:  Cannot declare class CodeFin\Http\Api\Auth\AuthController, because the name is already in use in /home/ubuntu/workspace/code-financeiro/app/Http/Controllers/Api/AuthController.php on line 11
 [07-Feb-2017 12:51:16 UTC] PHP Fatal error:  Cannot declare class CodeFin\Http\Api\Auth\AuthController, because the name is already in use in /home/ubuntu/workspace/code-financeiro/app/Http/Controllers/Api/AuthController.php on line 11
+[09-Feb-2017 17:24:38 UTC] PHP Fatal error:  Uncaught ErrorException: Undefined variable: token in /home/ubuntu/workspace/code-financeiro/app/Http/Controllers/Api/AuthController.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/code-financeiro/app/Http/Controllers/Api/AuthController.php(20): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/home/ubuntu/wo...', 20, Array)
+#1 [internal function]: CodeFin\Http\Controllers\Api\AuthController->accessToken(Object(Illuminate\Http\Request))
+#2 /home/ubuntu/workspace/code-financeiro/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#3 /home/ubuntu/workspace/code-financeiro/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('accessToken', Array)
+#4 /home/ubuntu/workspace/code-financeiro/vendor/laravel/framework/src/Illuminate/Routing/Route.php(189): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(CodeFin\Http\Control in /home/ubuntu/workspace/code-financeiro/app/Http/Controllers/Api/AuthController.php on line 20
