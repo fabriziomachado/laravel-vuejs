@@ -38,12 +38,10 @@ class AuthController extends Controller
         return $this->sendFailedLoginResponse($request); // login falho
     }
     
-
-    // public function refreshToken(Request $request){
-    //     $token = Auth::guard('api')->refresh();
-    //     return $this->sendLoginResponse($request, $token);
-    // }
-
+    public function refreshToken(Request $request){
+        $token = Auth::guard('api')->refresh();
+        return $this->sendLoginResponse($request, $token);
+    }
 
     protected function sendLoginResponse(Request $request, $token)
     {
