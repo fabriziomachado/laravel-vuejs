@@ -77,16 +77,11 @@ class AuthController extends Controller
         ], 401);
     }
     
-
-
     // public function logout(Request $request)
     // {
     //     $this->guard()->logout();
-
     //     $request->session()->flush();
-
     //     $request->session()->regenerate();
-
     //     return redirect(env('URL_ADMIN_LOGIN','/login'));
     // }
     
