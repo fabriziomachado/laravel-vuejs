@@ -4,7 +4,7 @@ namespace CodeFin\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-use CodeFin\Jwt\Manager;
+use CodeFin\Jwt\Manager
 
 class AppServiceProvider extends ServiceProvider
 {
